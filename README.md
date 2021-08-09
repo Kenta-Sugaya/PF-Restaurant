@@ -29,8 +29,8 @@
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1Mga_YX5gd6J2CrIqjiKiwD4k377TCtX_ybe7OSu9SfY/edit#gid=1373217982)<br>
 [機能定義書](https://docs.google.com/spreadsheets/d/1M4-fgfhXcKwm_ti5eF4BZJmALw4YIEtH6oaK2DgIUQ8/edit#gid=0)<br>
 [詳細設計](https://docs.google.com/spreadsheets/d/13GpLKfbj59AQdAwwJVEHwNfB98hgzZBiV1JpfRxaBXI/edit#gid=2133469642)<br>
-[ER図](https://drive.google.com/drive/folders/1Z0L0T-LBzkbvM1aH-l4dc-xEKaaOfnZc)<br>
-[ワイヤーフレーム](https://drive.google.com/drive/folders/1Z0L0T-LBzkbvM1aH-l4dc-xEKaaOfnZc)<br>
+[ER図](https://app.diagrams.net/#G1RsYmccwvXUjxhRbAhyPiHAXRa8cg5_FZ)<br>
+[ワイヤーフレーム](https://app.diagrams.net/#G1-IZ2eWETNa1Kot6NQR_PZTZwiMG8l6sO)<br>
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/173m0k0Dt_xUy6xYBrarf6GXr1rkXgpyoG1xfGJ1b1hU/edit#gid=0
