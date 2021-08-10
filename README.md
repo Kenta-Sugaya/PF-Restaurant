@@ -30,8 +30,8 @@
 * [機能定義書](https://docs.google.com/spreadsheets/d/1M4-fgfhXcKwm_ti5eF4BZJmALw4YIEtH6oaK2DgIUQ8/edit#gid=0)<br>
 * [詳細設計](https://docs.google.com/spreadsheets/d/13GpLKfbj59AQdAwwJVEHwNfB98hgzZBiV1JpfRxaBXI/edit#gid=2133469642)<br>
 * [ER図](https://drive.google.com/file/d/1RsYmccwvXUjxhRbAhyPiHAXRa8cg5_FZ/view)<br>
-* [ワイヤーフレーム](https://drive.google.com/file/d/1-IZ2eWETNa1Kot6NQR_PZTZwiMG8l6sO/view)<br>
-
+* [UI flows](https://drive.google.com/file/d/1-IZ2eWETNa1Kot6NQR_PZTZwiMG8l6sO/view)<br>
+* [ワイヤーフレーム]()
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/173m0k0Dt_xUy6xYBrarf6GXr1rkXgpyoG1xfGJ1b1hU/edit#gid=0
 
