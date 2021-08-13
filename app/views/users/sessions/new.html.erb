@@ -1,26 +1,29 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<main class="text-center form-signin">
+  <h2>会員の方はこちら</h2>
+  <div style="margin-top:100px;">
+    <h4>ログイン</h4>
   </div>
+  <div class="container">
+    <div class="row" style="margin-bottom:100px;">
+      <div class="mx-auto" style="width: 600px;">
+        <div class="border border-secondary rounded bg-light text-dark" style="padding:10px;">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field pb-2">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'メールアドレス' %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+            <div class="field pb-4">
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'パスワード' %>
+            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="actions pb-3">
+              <%= f.submit "ログイン", class: 'btn btn-outline-success btn-lg' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+  
+</main>
