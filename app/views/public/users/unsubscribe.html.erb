@@ -1,2 +1,16 @@
-<h1>Public::Users#unsubscribe</h1>
-<p>Find me in app/views/public/users/unsubscribe.html.erb</p>
+<% provide(:title, "退会画面") %>
+<div class="container">
+<div class="text-center">
+<h1>退会画面</h1>
+<div>
+  <h2>本当に退会しますか？</h2>
+  <div>
+    <p>退会する場合は、『退会する』をクリックしてください。</p>
+  </div>
+  <div>
+    <%= link_to '退会しない', public_users_my_page_path(current_user),class:"btn btn-primary" %>
+    <%= link_to "退会する", public_users_unsubscribe_update_path, method: :patch,class:"btn btn-danger" %>
+  </div>
+</div>
+</div>
+</div>

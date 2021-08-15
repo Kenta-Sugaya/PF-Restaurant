@@ -3,17 +3,32 @@
       <div class="container-fluid justify-content-center">
         <h1 class="title"><a class="navbar-brand" href="/"><span>おうちレストラン</span></a></h1>
         
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <% if user_signed_in? %>
         <ul class="nav navbar mr-auto">
           <li class="nav"><%= link_to "shops", public_shops_path, class: "nav-link navbar-light" %></li>
           <li class="nav"><%= link_to "products" , public_products_path, class: "nav-link navbar-light" %></li>
         </ul>
         <ul class="nav navbar">
+          <li class="header-name">
+                ようこそ、<%= current_user.last_name %><%= current_user.first_name %>さん！
+          </li>
           <li class="nav"><%= link_to "cart" , public_cart_products_path, class: "nav-link navbar-light" %></li>
           <li class="nav"><%= link_to "my page", public_users_my_page_path(current_user), class: "nav-link navbar-light"%></li>
           <li class="nav"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link navbar-light"%></li>
         </ul>
+        <% else %>
+        <ul class="nav navbar mr-auto">
+          <li class="nav"><%= link_to "shops", public_shops_path, class: "nav-link navbar-light" %></li>
+          <li class="nav"><%= link_to "products" , public_products_path, class: "nav-link navbar-light" %></li>
+        </ul>
+        <ul class="nav navbar">
+          <li class="nav"><%= link_to "sign up", new_user_registration_path , class: "nav-link navbar-light" %></li>
+          <li class="nav"><%= link_to "login", new_user_session_path , class: "nav-link navbar-light" %></li>
+        </ul>
           
-          
+        <% end %>
+        </div>  
       </div>
     </nav>
 </header>
