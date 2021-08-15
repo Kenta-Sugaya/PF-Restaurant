@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :public do
+    get '/deliveries' => 'deliveries#index'
+    get 'deliveries/create'
+    get 'deliveries/edit'
+    get 'deliveries/update'
+    get 'deliveries/destroy'
     get '/cart_products' => 'cart_products#index'
     get 'cart_products/update'
     get 'cart_products/create'
@@ -14,7 +19,9 @@ Rails.application.routes.draw do
     get 'shops/show'
     get '/products' => 'products#index'
     get 'products/show'
+    resources :users
     resources :products
+    resources :deliveries 
   end
   root to: 'homes#top'
   
