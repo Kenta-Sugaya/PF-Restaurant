@@ -1,2 +1,21 @@
-<h1>Public::Products#show</h1>
-<p>Find me in app/views/public/products/show.html.erb</p>
+<div class="header-show"></div>
+  <div class= "container mb-5">
+    <h3 class="page_title mt-5">料理内容</h3>
+
+     <div class = "row ml-5 pt-5 text-right">
+       <div class = "col-md-6">
+         <%= attachment_image_tag @product, :image, size: "350x350", fallback: "no_image.jpg" %>
+       </div>
+       <div class = "col-md-3 mb-5">
+         <%= form_with model: @cart_product, url: public_cart_products_path, local:true do |f| %>
+             <p><%= @product.name %></p><br>
+             <p><%= @product.introduction %></p><br>
+             <p>¥<%= (@product.price*1.10).floor %>（税込）</p><br>
+             <p><%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %></p><br>
+             <p><%=f.hidden_field :product_id, value: @product.id %></p> 
+             <p><%= f.submit 'カートに入れる', class: "btn btn-primary" %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

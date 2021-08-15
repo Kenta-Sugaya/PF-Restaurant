@@ -1,7 +1,31 @@
 <div class=container>
 <div class="products_title text-center">
   <h3>すべてのメニュー</h3>
+  <p>( 全<%= @products.count %>件 )</p>
 </div>
-
-    <%= link_to "仮詳細" , public_products_show_path %>
+  <div class="row">
+    <% @products.each do |product| %>
+    <% if product.sales_status == true %>
+    <div class="col">
+      <% link_to products_path(product.id) do %>
+        <span class="img_container">
+          <%= attachment_image_tag(product, :image, size: "200x200", fallback: "no_imag.jpg") %><br>
+        </span>
+      <% end %>
+        <div class="font-weight-bold"><%= product.name %></div><br>
+        <div class="font-weight-light mb-5"><%= product.sales_status ? "販売中" : "売り切れ" %></div>
+        <div class="font-weight-light mb-5">¥<%= product.price %></div>
+    </div>
+    <% else %>
+    <div class="col">
+        <span class="img_container">
+          <%= attachment_image_tag(product, :image, size: "200x200", fallback: "no_imag.jpg") %><br>
+        </span>
+        <div class="font-weight-bold"><%= product.name %></div><br>
+        <div class="font-weight-light mb-5"><%= product.sales_status ? "販売中" : "売り切れ" %></div>
+        <div class="font-weight-light mb-5">¥<%= product.price %></div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
