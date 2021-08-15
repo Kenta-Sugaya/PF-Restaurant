@@ -1,4 +1,38 @@
 <% provide(:title, "登録情報編集") %>
 <div class = "container">
-    <%= link_to "退会する" , public_users_unsubscribe_path %>
+    <h2 class="head-line title_h2 text-center">会員情報編集</h2>
+      <%= form_with model:current_user,url:public_users_my_page_path(current_user), method: :patch ,local:true do |f| %>
+          <div class="form-group col-md-12">
+          <%= f.label :"氏名", class: "col-md-4 control-label" %>
+          <%= f.text_field:last_name, class: "last_name col-md-3" %>
+          <%= f.text_field :first_name, class: "first_name col-md-3" %>
+          </div>
+          <div class="form-group col-md-12">
+          <%= f.label :"カナ", class: "col-md-4 control-label" %>
+          <%= f.text_field :last_name_kana, class: "last_name_kana col-md-3 form-control-static name" %>
+          <%= f.text_field :first_name_kana, class: "first_name_kana col-md-3 form-control-static name" %>
+          </div>
+          <div class="form-group col-md-12">
+          <%= f.label :"郵便番号", class: "col-md-4 control-label" %>
+          <%= f.text_field :postal_code, class: "col-md-6 form-control-static" %>
+          </div>
+          <div class="form-group col-md-12">
+          <%= f.label :"住所", class: "col-md-4 control-label" %>
+          <%= f.text_field :address, class: "col-md-6 form-control-static" %>
+          </div>
+          <div class="form-group col-md-12">
+          <%= f.label :"電話番号(ハイフンなし)", class: "col-md-4 control-label" %>
+          <%= f.text_field :phone_number, class: "col-md-6 form-control-static" %>
+          </div>
+          <div class="form-group col-md-12">
+          <%= f.label :"メールアドレス", class: "col-md-4 control-label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-6 form-control-static" %>
+          </div>
+          
+          <div class="actions col-md-12">
+          <%= f.submit "編集内容を保存する",class: "btn btn-primary save col-xs-6" %>
+          <%= link_to "退会する" , public_users_unsubscribe_path , class: "glyphicon glyphicon-home btn btn-info" %>
+          <%= link_to "戻る", public_users_my_page_path(current_user), class: "glyphicon glyphicon-home btn btn-info" %>
+          </div>
+        <% end %>
 </div>
