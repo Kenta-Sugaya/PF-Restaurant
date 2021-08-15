@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'shops/show'
     get '/products' => 'products#index'
     get 'products/show'
+    resources :products
   end
   root to: 'homes#top'
   
