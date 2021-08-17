@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get '/admin' => 'admin/homes#top'
+  namespace :admin do
+    
+    get '/admins/products' => 'products#index'
+    get 'products/new'
+    get 'products/create'
+    get 'products/show'
+    get 'products/edit'
+    get 'products/update'
+    
+    resources :products
+  end
   namespace :public do
     get '/deliveries' => 'deliveries#index'
     get 'deliveries/create'
