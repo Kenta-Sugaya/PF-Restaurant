@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/admin' => 'admin/homes#top'
+  patch 'user/:id' => 'users#update'
   namespace :admin do
     
     get '/admins/products' => 'products#index'
@@ -9,6 +10,12 @@ Rails.application.routes.draw do
     get 'products/edit'
     get 'products/update'
     
+    resources :users, only: [:index, :show, :edit, :update ]
+    get '/users' => 'users#index'
+    get '/edit' => 'users#edit'
+    
+    
+
     resources :products
   end
   namespace :public do

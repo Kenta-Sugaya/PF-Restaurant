@@ -28,6 +28,7 @@
           <li class="nav"><%= link_to "products" , admin_products_path, class: "nav-link navbar-light" %></li>
         </ul>
         <ul class="nav navbar">
+          <li class="nav"><%= link_to "users" , admin_users_path, class: "nav-link navbar-light" %></li>
           <li class="nav"><%= link_to"logout", destroy_admin_session_path, method: :delete, class: "nav-link navbar-light"%></li>
         </ul>
         <% else %>
