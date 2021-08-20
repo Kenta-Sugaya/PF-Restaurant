@@ -25,7 +25,6 @@
 * 記念日やホームパーティーのおかずの数が欲しい時
 
 ## 設計書
-* [WBS](https://docs.google.com/spreadsheets/d/1S57pHwyVsNPKM2YVVa05ThtE8IXMav1zc4Pq-b70DWo/edit#gid=977420151)<br>
 * [テーブル定義書](https://docs.google.com/spreadsheets/d/1Mga_YX5gd6J2CrIqjiKiwD4k377TCtX_ybe7OSu9SfY/edit#gid=1373217982)<br>
 * [機能定義書](https://docs.google.com/spreadsheets/d/1M4-fgfhXcKwm_ti5eF4BZJmALw4YIEtH6oaK2DgIUQ8/edit#gid=0)<br>
 * [詳細設計](https://docs.google.com/spreadsheets/d/13GpLKfbj59AQdAwwJVEHwNfB98hgzZBiV1JpfRxaBXI/edit#gid=2133469642)<br>
