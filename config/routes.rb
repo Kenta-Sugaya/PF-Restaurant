@@ -1,49 +1,32 @@
 Rails.application.routes.draw do
+  root to: 'homes#top'
   get '/admin' => 'admin/homes#top'
   patch 'user/:id' => 'users#update'
+  post 'shops' => 'shops#create'
+  post 'product' => 'products#new'
   namespace :admin do
-    
-    get '/admins/products' => 'products#index'
-    get 'products/new'
-    get 'products/create'
-    get 'products/show'
-    get 'products/edit'
-    get 'products/update'
-    
+    resources :shops do
+      resources :products, except: [:index]
+    end
+    resources :products, only: [:index]
     resources :users, only: [:index, :show, :edit, :update ]
-    get '/users' => 'users#index'
-    get '/edit' => 'users#edit'
-    
-    
-
-    resources :products
+      get '/users' => 'users#index'
+      get '/edit' => 'users#edit'
   end
   namespace :public do
-    get '/deliveries' => 'deliveries#index'
-    get 'deliveries/create'
-    get 'deliveries/edit'
-    get 'deliveries/update'
-    get 'deliveries/destroy'
-    get '/cart_products' => 'cart_products#index'
-    get 'cart_products/update'
-    get 'cart_products/create'
-    get 'cart_products/destroy'
-    get 'cart_products/all_destroy'
-    get 'users/my_page' => 'users#show'
-    get 'users/edit'
-    get 'users/update'
-    get 'users/unsubscribe'
-    get 'users/unsubscribe_update'
+    resources :shops
     get '/shops' => 'shops#index'
-    get 'shops/show'
-    get '/products' => 'products#index'
-    get 'products/show'
     resources :users
+      get '/my_page' => 'users#show'
+      get '/unsubscribe' => 'users#unsubscribe'
     resources :products
+      get '/products' => 'products#index'
     resources :deliveries 
+      get '/deliveries' => 'deliveries#index'
+    resources :cart_products
+      get '/cart_products' => 'cart_products#index'
   end
-  root to: 'homes#top'
-  
+
   
   
   devise_for :users, :controllers => {

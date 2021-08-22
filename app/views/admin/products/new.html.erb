@@ -1,11 +1,9 @@
 <div class="my-4 offset-1"><h3 class="page_title">商品新規登録</h3></div>
 <div class="new-product-form col-8 offset-2">
-  <%= form_with model: @product, url: admin_admins_products_path(@product), local: true do |f| %>
+  <%= form_with(model: [:admin, @shop, @product], local: true) do |f| %>
     <dl>
-    　<dt><%= f.label :shop_name, "店舗名", class: 'mr-5' %></dt>
-    　<dd><%= f.text_field :shop_name, placeholder: '店舗名', class: 'form-control col-7' %></dd>
       <dt><%= f.label :image, "商品画像", class: 'mr-5' %></dt>
-      <dd><%= f.file_field :image %></dd>
+      <dd><%= f.attachment_field :image %></dd>
       <dt><%= f.label :name, "商品名", class: 'mr-5' %></dt>
       <dd><%= f.text_field :name, placeholder: '商品名', class: 'form-control col-7' %></dd>
       <dt><%= f.label :introduction, "商品説明", class: 'mr-5' %></dt>

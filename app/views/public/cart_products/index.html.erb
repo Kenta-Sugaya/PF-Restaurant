@@ -1,2 +1,53 @@
-<h1>Public::CartProducts#index</h1>
-<p>Find me in app/views/public/cart_products/index.html.erb</p>
+<div class="container">
+  <div class="header-cart-product"></div>
+  <div class="cart-step1"></div>
+  <div class="row">
+      <div class="h3 mx-auto mb-3 page_title">Shopping Cart</div>
+  </div>
+  
+  <div class="row mx-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th style="width: 40%">商品名</th>
+            <th style="width: 10%">価格(税込)</th>
+            <th style="width: 20%">個数</th>
+            <th style="width: 15%">小計</th>
+            <th style="width: 10%"></th>
+          </tr>
+       </thead>
+
+       <tbody>
+         <% @cart_products.each do |cart_product| %>
+           <tr>
+             <td><%= attachment_image_tag cart_product.product, :image, size: "50x50" %><%= cart_product.product.name %></td>
+             <td><%= (cart_product.product.price*1.10).floor.to_s(:delimited) %></td>
+             <td>
+               <%=form_with model: cart_product, url: cart_product_path(cart_product), local:true do |f| %>
+                 <%=f.select :amount, [["1",1],["2",2],["3",3],["4",4],["5",5],["6",6],["7",7],["8",8],["9",9],["10",10]] %>
+                 <%=f.hidden_field :item_id, value: cart_product.product.id %>
+                 <%=f.submit'変更',class:"btn btn-outline-dark"%>
+               <% end %>
+             </td>
+             <td><%= cart_product.total_price.to_s(:delimited) %></td> 
+             <td><%= link_to "削除", cart_product_path(cart_product), class: "btn btn-danger", method: :delete %></td>
+           </tr>
+         <% end %>
+       </tbody>
+
+      </table>
+        <tbody>
+          <div class="mb-5 mx-auto">
+            <%= link_to "買い物を続ける", root_path, class: "btn btn-outline-secondary w-150px" %>
+          </div>
+          <div class="col-md-5 pl-5 text-right">
+           <table class="table table-bordered">
+             <tr>
+              <th class="text-center">合計金額</th>
+                <td><%= @cart_products.all_total_price.to_s(:delimited) %></td>
+                </tr>
+           </table>
+          </div>
+       </tbody>
+   </div>
+</div>

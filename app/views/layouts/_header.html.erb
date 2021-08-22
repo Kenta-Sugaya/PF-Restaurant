@@ -20,12 +20,13 @@
                 ようこそ、<%= current_user.last_name %><%= current_user.first_name %>さん！
           </li>
           <li class="nav"><%= link_to "cart" , public_cart_products_path, class: "nav-link navbar-light" %></li>
-          <li class="nav"><%= link_to "my page", public_users_my_page_path(current_user), class: "nav-link navbar-light"%></li>
+          <li class="nav"><%= link_to "my page", public_my_page_path(current_user), class: "nav-link navbar-light"%></li>
           <li class="nav"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link navbar-light"%></li>
         </ul>
         <% elsif admin_signed_in? %>
         <ul class="nav navbar mr-auto">
           <li class="nav"><%= link_to "products" , admin_products_path, class: "nav-link navbar-light" %></li>
+          <li class="nav"><%= link_to "shops" , admin_shops_path, class: "nav-link navbar-light" %></li>
         </ul>
         <ul class="nav navbar">
           <li class="nav"><%= link_to "users" , admin_users_path, class: "nav-link navbar-light" %></li>
