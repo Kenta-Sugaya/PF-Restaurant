@@ -21,10 +21,13 @@
             </tr>
          
           </table>
-        <%= link_to "編集する", edit_admin_shop_path(@shop), class: 'btn btn-success offset-7' %>
+          <div class='btn-toolbar' role="toolbar">
+              <%= link_to "編集する", edit_admin_shop_path(@shop), class: 'btn btn-success' %>
+              <%= link_to '商品登録', new_admin_shop_product_path(@shop), class: 'btn btn-primary' %>
+          </div>  
       </div>
         </div>
-        <%= link_to '商品登録', new_admin_shop_product_path(@shop), class: "fas fa-plus-circle fa-2x", style:"color:dimgray;" %>
+        
       </div>
      
   </div>

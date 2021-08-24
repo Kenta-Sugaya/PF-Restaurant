@@ -7,9 +7,10 @@
     <% @products.each do |product| %>
     <% if product.sales_status == true %>
     <div class="col">
-      <% link_to products_path(product.id) do %>
+      <%= link_to public_product_path(product.id) do %>
         <span class="img_container">
-          <%= attachment_image_tag(product, :image, size: "200x200", fallback: "no_imag.jpg") %><br>
+        <div class="image-content"><%= attachment_image_tag @product, :image, :fill, 200, 200, fallback: "no_image.jpg" %></div>
+
         </span>
       <% end %>
         <div class="font-weight-bold"><%= product.name %></div><br>
@@ -18,9 +19,8 @@
     </div>
     <% else %>
     <div class="col">
-        <span class="img_container">
-          <%= attachment_image_tag(product, :image, size: "200x200", fallback: "no_imag.jpg") %><br>
-        </span>
+        
+        <div class="image-content"><%= attachment_image_tag @product, :image, :fill, 200, 200, fallback: "no_image.jpg" %></div>
         <div class="font-weight-bold"><%= product.name %></div><br>
         <div class="font-weight-light mb-5"><%= product.sales_status ? "販売中" : "売り切れ" %></div>
         <div class="font-weight-light mb-5">¥<%= product.price %></div>

@@ -1,2 +1,30 @@
-<h1>Admin::Products#edit</h1>
-<p>Find me in app/views/admin/products/edit.html.erb</p>
+<div class="my-4 offset-1"><h3 class="page_title">商品編集</h3></div>
+<div class="new-product-form col-8 mx-auto">
+  <%= form_with model: @product, url: admin_shop_product_path(@product), local: true do |f| %>
+  <dl>
+    <dt><%= f.label :image, "商品画像", class: 'mr-5' %></dt>
+    <dd><%= f.attachment_field :image %></dd>
+    <dt><%= f.label :name, "商品名", class: 'mr-5' %></dt>
+    <dd><%= f.text_field :name, placeholder: '商品名', class: 'form-control col-7' %></dd>
+    <dt><%= f.label :introduction, "商品説明", class: 'mr-5' %></dt>
+    <dd><%= f.text_area :introduction, placeholder: 'ここに説明文を記述します', rows: 5, class: 'form-control col-7' %></dd>
+    <dt><%= f.label :price, "税抜価格", class: 'mr-5' %></dt>
+    <div class="d-flex">
+      <dd class="col-10 p-0"><%= f.text_field :price, placeholder: '1000', class: 'form-control col-11' %></dd>
+      <dd style="margin-left: -30px;">円</dd>
+    </div>
+    <div class="sale-status">
+    <%= f.label :sales_status %>
+    <div>
+      <%= f.radio_button :sales_status, true %>
+      <%= f.label :sales_status, '販売中', value: true %>
+    </div>
+    <div>
+      <%= f.radio_button :sales_status, false %>
+      <%= f.label :sales_status, '販売停止中', value: false %>
+    </div>
+  </div>
+  </dl>
+    <%= f.submit "変更を保存", class: 'btn btn-success col-3 offset-4' %>
+  <% end %>
+</div>

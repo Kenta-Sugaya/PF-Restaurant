@@ -1,19 +1,22 @@
 class Admin::ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @products = Product.page(params[:page]).per(9)
+    @products = Product.all.page(params[:page]).per(9)
+    p "-------"
+    p @products
   end
 
   def new
-    @shop = Shop.find(params[:shop_id])
     @product = Product.new
+    @shop = Shop.find(params[:shop_id])
+
   end
 
   def create
-    @product = Product.new(product_params)
-    @product.shop_id = params[:shop_id]
+    @shop = Shop.find(params[:shop_id])
+    @product = @shop.products.new(product_params)
+    #@product.shop_id = params[:shop_id]
     if @product.save
-      redirect_to admin_shop_products_path
+      redirect_to admin_products_path
     else
       render :new
     end
@@ -36,7 +39,7 @@ class Admin::ProductsController < ApplicationController
   private
 
    def product_params
-      params.permit(:name, :image, :introduction, :price, :sales_status, :shop_id)
+      params.require(:product).permit(:name, :image, :introduction, :price, :sales_status, :product_id, :shop_id)
    end
    
 

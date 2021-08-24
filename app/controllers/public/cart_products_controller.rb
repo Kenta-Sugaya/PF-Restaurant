@@ -6,17 +6,32 @@ class Public::CartProductsController < ApplicationController
   end
 
   def update
+    @cart_product = CartProduct.find(params[:id])
+    @ccart_product.update(cart_product_params)
+    redirect_to public_cart_products_path
   end
 
   def create
+    @cart_product = CartProduct.new(cart_product_params)
+    @cart_product.user_id = current_user.id
+    @cart_product.save
+    redirect_to public_cart_products_path
   end
 
   def destroy
+    @cart_product = CartProduct.find(params[:id])
+    @cart_product.destroy
+    redirect_back(fallback_location: public_cart_products_path)
   end
 
   def delete_all
     @cart_products = current_user
     @cart_products.delete_all
     redirect_back(fallback_location: public_cart_products_path)
+  end
+  
+  private
+  def cart_product_params
+    params.permit(:product_id, :amount, :user_id)
   end
 end
