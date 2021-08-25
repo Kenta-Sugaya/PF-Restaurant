@@ -6,6 +6,7 @@ class Public::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @favorite = Favorite.new
     @cart_products = CartProduct.new
   end
   

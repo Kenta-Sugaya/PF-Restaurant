@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     resources :users
       get '/my_page' => 'users#show'
       get '/unsubscribe' => 'users#unsubscribe'
-    resources :products
+    resources :products do
+      resources :favorites, only: [:create, :destroy]
+    end
     resources :deliveries 
     resources :cart_products
       get '/cart_products' => 'cart_products#index'
@@ -31,8 +33,8 @@ Rails.application.routes.draw do
       post '/orders/confirm' => 'orders#confirm'
       get '/orders/complete' => 'orders#complete'
     resources :contacts
-      post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
-      post 'contacts/back' => 'contacts#back', as: 'back'
+      post 'confirm' => 'contacts#confirm', as: 'confirm'
+      post 'back' => 'contacts#back', as: 'back'
       get 'done' => 'contacts#done', as: 'done'
   
   end

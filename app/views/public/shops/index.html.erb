@@ -8,7 +8,7 @@
       <div class="col">
         <%= link_to public_shop_path(shop.id) do %>
         <span class="img_container">
-          <%= attachment_image_tag @shop, :shop_image, :fill, 200, 200, fallback: "no_image.jpg" %>
+          <%= attachment_image_tag shop, :shop_image, :fill, 200, 200, fallback: "no_image.jpg" %>
         </span>
         <% end %>
         <div class="font-weight-bold"><%= shop.shop_name %></div><br>
