@@ -1,15 +1,14 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container">
         <% if user_signed_in? %>
-        <h1 class="title"><a class="navbar-brand" href="/"><span>おうちレストラン</span></a></h1>
+          <div class="navbar-brand"><%= link_to "おうちレストラン", root_path, class: "title" %></div>
         <% elsif admin_signed_in? %>
-        <h1 class="title"><a class="navbar-brand" href="/admin"><span>おうちレストラン(管理者用)</span></a></h1>
+        　<div class="navbar-brand"><%= link_to "おうちレストラン", admin_path, class: "title" %></div>
         <% else %>
-        <h1 class="title"><a class="navbar-brand" href="/"><span>おうちレストラン</span></a></h1>
+        　<div class="navbar-brand"><%= link_to "おうちレストラン", root_path, class: "title" %></div>
         <% end %>
-        
-        <div class="navbar" id="navbarNavDropdown">
+        <div class="row">
         <% if user_signed_in? %>
         <ul class="nav navbar">
           <li class="header-name">

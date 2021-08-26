@@ -16,26 +16,39 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
- 
- .title {
-  position: relative;
-  text-align: center;
-  top: 0;
+ *{
   margin: 0;
-  font-weight: bolder;
+  padding: 0;
+ }
+ .navbar-brand {
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  margin: 0;
+  left: 10%;
+  font-weight: bold;
   font-family:  YuMincho,"Segoe Print", sans-serif;
-  font-size: 40px;
+  font-size: 25px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  
 
+ }
+ .title {
+  color: #000;
+  text-decoration: none;
  }
  .navbar {
      margin-top: 0;
+     height: 150px;
  }
  .nav-link {
   text-decoration: none;
   color: black ; 
  }
  ul {
-    padding-top: 8px;
+    top: 20px;
+    left: 50%;
+    padding-top: 15px;
    padding-right: 10px;
    color: black;
    font-family:  YuMincho,"Segoe Print", sans-serif;
@@ -44,6 +57,8 @@
 }
 li {
  color: black;
+ font-size: 18px;
+ font-weight: bold;
 }
 
 .top-intro {
@@ -57,6 +72,7 @@ li {
   
   
 }
+
 .top-intro2 {
   font-family:  YuMincho,"Segoe Print", sans-serif;
   font-size: 40px;
@@ -64,8 +80,10 @@ li {
   top: 270px;
   text-align: center;
   position: relative;
-  text-shadow: 2px 1px 0 white
+  text-shadow: 2px 2px 0 #808080
 }
+ 
+
 .top-intro3 {
   font-family:  YuMincho,"Segoe Print", sans-serif;
   font-size: 40px;
@@ -73,14 +91,14 @@ li {
   top: 820px;
   text-align: center;
   position: relative;
-  text-shadow: 2px 1px 0 white
+  text-shadow: 2px 2px 0 #808080
 }
 .sub-intro{
   font-family:  YuMincho,"Segoe Print", sans-serif;
   font-size: 25px;
   color: black;
   top: 500px;
-  left: 15%;
+  left: 17%;
   text-align: center;
   position: relative;
   text-shadow: 2px 1px 0 white
@@ -112,25 +130,69 @@ li {
  width: 100%;
  height: 500px;
  object-fit: cover;
+ 
 
+}
+.slider {
+ overflow: hidden;
+ position: relative; 
 }
 .intro-img {
  width: 30%;
  height: 20%;
  object-fit: cover;
  position: relative;
- top: 300px;
+ top: 350px;
  left: 15%;
  text-align: center;
+ box-shadow: 60px -16px teal;
+ animation-name : intro;
+ animation-duration: 3s;
+ 
 }
+@keyframes intro {
+ 0%{
+  left: 15%;
+  top: 350px;
+ }
+ 80%{
+  left: 15%;
+  top: 350px;
+ }
+ 100%{
+  left: 15%;
+  top: 250px;
+ }
+ 
+}
+
 .intro-img2 {
  width: 30%;
  height: 20%;
  object-fit: cover;
  position: relative;
- top: 700px;
+ top: 750px;
  left: 20%;
  text-align: center;
+ box-shadow: 60px -16px teal;
+ animation-name : intro2;
+ animation-duration: 3s;
+}
+
+@keyframes intro2 {
+ 0%{
+  left: 20%;
+  top: 750px;
+ }
+ 80%{
+  left: 20%;
+  top: 750px;
+ }
+ 100%{
+  left: 20%;
+  top: 650px;
+ }
+ 
 }
 .intro-img3 {
  width: 100%;

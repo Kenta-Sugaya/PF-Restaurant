@@ -1,9 +1,9 @@
 <div class="cart-step2"></div>
-
+<div class="container col-md-8">
 <div class="main-visual-cart">
-   <div class="h3 page_title">注文情報入力</div>
+   <div class="h3 order_title">注文情報入力</div>
 
-   <div class="container">
+   
      <%= form_with(model: @order, url: public_orders_confirm_path, local: true) do |f| %>
 
        <div class="form-group">
@@ -51,9 +51,10 @@
               </div>
             <% end %>
          </div>
-</div>
+        
          <%= f.submit "確認画面へ進む", class: "btn btn-outline-secondary offset-4 col-2 mx-6" %>
 
        </div>
       <% end %>
    </div>
+</div>

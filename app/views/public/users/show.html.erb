@@ -1,6 +1,7 @@
 <% provide(:title, "マイページ") %>
 <div class="container">
-  <h2 class="head_my_page title_h2 text-center">My Page</h2>
+  <div class="header-mypage-item"></div>
+  <h2 class="head_my_page title_h2 text-center">マイページ</h2>
     <h3 class="subhead_my_page">登録情報</h3>
 			
 		  
@@ -38,11 +39,11 @@
 		
       <div class="mypage-bottoms">
           <%= link_to "編集する", edit_public_user_path(current_user) , class: "glyphicon glyphicon-pencil btn btn-success" %>
-				<P><strong class="shipping-link">配送先　</strong>
+				<P><strong class="shipping-link">配送先</strong>
 				<%= link_to "配送先一覧", public_deliveries_path , class: "glyphicon glyphicon-pencil btn btn-success" %>
 				</p>
 				<p><strong class="order-link">注文履歴</strong>
-				
+				<%= link_to "注文履歴一覧", public_orders_path , class: "glyphicon glyphicon-pencil btn btn-success" %>
 				</p>
 	  </div>
 			

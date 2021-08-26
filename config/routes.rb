@@ -28,14 +28,14 @@ Rails.application.routes.draw do
     resources :deliveries 
     resources :cart_products
       get '/cart_products' => 'cart_products#index'
-      delete '/delete_all' => 'cart_items#delete_all'
     resources :orders
       post '/orders/confirm' => 'orders#confirm'
-      get '/orders/complete' => 'orders#complete'
-    resources :contacts
-      post 'confirm' => 'contacts#confirm', as: 'confirm'
-      post 'back' => 'contacts#back', as: 'back'
-      get 'done' => 'contacts#done', as: 'done'
+      post '/orders/complete' => 'orders#complete'
+    resources :contacts, only: [:new, :create]
+      post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+      post 'contacts/back', to: 'contacts#back', as: 'back'
+      get 'done', to: 'contacts#done', as: 'done'
+      
   
   end
 
