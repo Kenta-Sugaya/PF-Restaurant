@@ -1,17 +1,17 @@
 <div class="container">
 <%= form_with model: @contact, url: public_confirm_path do |f| %>
   <div class="form-group">
-    <%= f.label :name, 'お名前*' %>
+    <%= f.label :name, 'お名前' %>
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
   
   <div class="form-group">
-    <%= f.label :email, '返信用メールアドレス*' %>
+    <%= f.label :email, '返信用メールアドレス' %>
     <%= f.text_field :email, autofocus: true, class: 'form-control' %>
   </div>
     
   <div class="form-group">
-    <%= f.label :message, 'メッセージ*' %>
+    <%= f.label :message, 'メッセージ' %>
     <%= f.text_area :message, size: '10x10', class: 'form-control' %>
   </div>
 

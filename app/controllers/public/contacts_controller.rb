@@ -9,7 +9,7 @@ class Public::ContactsController < ApplicationController
       render :new
     end
   end
-　
+
   def back
     @contact = Contact.new(params[:contact].permit(:name, :email, :message))
     render :new
@@ -31,7 +31,7 @@ class Public::ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:email, :name, :phone_number, :subject, :message )
+    params.require(:contact).permit(:email, :name, :phone_number, :subject, :message)
   end
 end
 

@@ -1,3 +1,20 @@
 // Place all the styles related to the public::cart_products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.head_cart_page {
+  margin-left: 25%;
+  width: 55%;
+  text-align: center;
+  font-family:  YuMincho,"Segoe Print", sans-serif;
+  color: #339966;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #339966;/*上線*/
+  border-bottom: solid 3px #339966;/*下線*/
+}
+.head-cart-page-item {
+ height: 30vh;
+ background-image: image-url('heath.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}
