@@ -59,6 +59,7 @@ li {
  color: black;
  font-size: 18px;
  font-weight: bold;
+ text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 .top-intro {
@@ -146,24 +147,12 @@ li {
  left: 15%;
  text-align: center;
  box-shadow: 60px -16px teal;
- animation-name : intro;
- animation-duration: 3s;
- 
+ transition: all .15s ease;
 }
-@keyframes intro {
- 0%{
-  left: 15%;
-  top: 350px;
- }
- 80%{
-  left: 15%;
-  top: 350px;
- }
- 100%{
-  left: 15%;
-  top: 250px;
- }
- 
+
+.intro-img:hover {
+ transform: scale(1.1);
+ transition: all .3s ease;
 }
 
 .intro-img2 {
@@ -175,24 +164,12 @@ li {
  left: 20%;
  text-align: center;
  box-shadow: 60px -16px teal;
- animation-name : intro2;
- animation-duration: 3s;
+ transition: all .15s ease;
 }
 
-@keyframes intro2 {
- 0%{
-  left: 20%;
-  top: 750px;
- }
- 80%{
-  left: 20%;
-  top: 750px;
- }
- 100%{
-  left: 20%;
-  top: 650px;
- }
- 
+.intro-img2:hover {
+ transform: scale(1.1);
+ transition: all .3s ease;
 }
 .intro-img3 {
  width: 100%;
