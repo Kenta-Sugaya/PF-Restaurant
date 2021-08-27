@@ -10,5 +10,4 @@ class Public::ShopsControllerTest < ActionDispatch::IntegrationTest
     get public_shops_show_url
     assert_response :success
   end
-
 end

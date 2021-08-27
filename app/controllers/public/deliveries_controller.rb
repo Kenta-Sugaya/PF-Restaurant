@@ -41,9 +41,8 @@ class Public::DeliveriesController < ApplicationController
       render :index
     end
   end
-  
+
   def delivery_params
     params.require(:delivery).permit(:postal_code, :address, :name, :user_id)
   end
-
 end

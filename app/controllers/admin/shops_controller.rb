@@ -25,12 +25,12 @@ class Admin::ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     @shop.update(shop_params)
-      redirect_to admin_shop_path
+    redirect_to admin_shop_path
   end
-  
+
   private
 
-   def shop_params
-      params.require(:shop).permit(:shop_name, :shop_image, :shop_introduction)
-   end
+  def shop_params
+    params.require(:shop).permit(:shop_name, :shop_image, :shop_introduction)
+  end
 end

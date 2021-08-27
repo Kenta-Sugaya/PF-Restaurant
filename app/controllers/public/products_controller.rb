@@ -1,5 +1,5 @@
 class Public::ProductsController < ApplicationController
-  before_action :authenticate_user!,except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @products = Product.all.order("id ASC")
     @shop = Shop.all
@@ -11,13 +11,14 @@ class Public::ProductsController < ApplicationController
     @favorite = Favorite.new
     @cart_products = CartProduct.new
   end
-  
+
   private
+
   def product_params
     params.require(:product).permit(:name, :introduction, :price, :image, :amount)
   end
+
   def shop_params
     params.require(:shop).permit(:shop_name)
   end
-
 end

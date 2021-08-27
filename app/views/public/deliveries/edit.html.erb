@@ -1,6 +1,6 @@
 <div class="my-4 offset-1"><h3 class="page_title">配送先編集</h3></div>
 <div class="new-product-form col-8 offset-2">
-  <%= form_with model:@delivery, url: edit_public_delivery_path do |f| %>
+  <%= form_with model: @delivery, url: public_delivery_path, local: true do |f| %>
     <dl>
       <dt class="pb-4">
         <%= f.label :郵便番号（ハイフンなし）, class: 'mr-5 pt-2' %>

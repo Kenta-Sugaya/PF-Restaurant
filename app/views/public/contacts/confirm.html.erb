@@ -1,3 +1,5 @@
+<div class="container">
+<div class="row col-md-8">
 <table>
   <tbody>
     <tr>
@@ -14,8 +16,8 @@
     </tr>
   </tbody>
 </table>
-
-<%= form_with model: @contact , url: public_confirm_path do |f| %>
+</div>
+<%= form_with model: @contact , url: public_confirm_path, local: true do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :phone_number %>
@@ -31,3 +33,4 @@
   <%= f.hidden_field :message %>
   <div><%= f.submit '入力画面に戻る' %></div>
 <% end %>
+</div>

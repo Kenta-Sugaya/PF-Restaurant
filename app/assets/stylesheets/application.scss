@@ -47,13 +47,14 @@
  }
  ul {
     top: 20px;
-    left: 50%;
+    left: 45%;
     padding-top: 15px;
    padding-right: 10px;
    color: black;
    font-family:  YuMincho,"Segoe Print", sans-serif;
    text-align: right;
    display: block;
+   position: absolute;
 }
 li {
  color: black;
@@ -195,4 +196,8 @@ footer{
     position: relative;
     top: 1100px;
     bottom: 0;
+}
+.footer-nav {
+ top: 20px;
+ left: 10%;
 }

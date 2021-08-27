@@ -24,8 +24,8 @@ class Public::CartProductsController < ApplicationController
     redirect_back(fallback_location: public_cart_products_path)
   end
 
-
   private
+
   def cart_product_params
     params.require(:cart_product).permit(:product_id, :amount, :user_id)
   end
