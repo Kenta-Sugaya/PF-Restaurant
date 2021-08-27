@@ -12,3 +12,18 @@
   border-bottom: solid 3px #339966;/*下線*/
   font-weight: bolder;
 }
+.shop_item {
+ height: 40vh;
+ background-image: image-url('party.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}
+.shop_item-overlay {
+  text-align: center;
+  font-family:  YuMincho,"Segoe Print", sans-serif;
+  color: white;
+  font-weight: bold;
+  padding-top: 80px;
+  text-shadow: 2px 1px 0 #000
+}
