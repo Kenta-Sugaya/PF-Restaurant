@@ -25,5 +25,4 @@ class Public::DeliveriesControllerTest < ActionDispatch::IntegrationTest
     get public_deliveries_destroy_url
     assert_response :success
   end
-
 end

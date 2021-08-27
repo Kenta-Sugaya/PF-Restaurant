@@ -25,5 +25,4 @@ class Public::UsersControllerTest < ActionDispatch::IntegrationTest
     get public_users_unsubscribe_update_url
     assert_response :success
   end
-
 end

@@ -6,7 +6,7 @@ class Public::ContactsController < ApplicationController
   def confirm
     @contact = Contact.new(params[:contact].permit(:name, :email, :message))
     if @contact.invalid?
-      render :new
+      render :action => 'confirm'
     end
   end
 
@@ -19,7 +19,7 @@ class Public::ContactsController < ApplicationController
     @contact = Contact.new(params[:contact].permit(:name, :email, :message))
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
-      redirect_to public_done_path
+      render :action => 'done'
     else
       render :new
     end
@@ -34,5 +34,3 @@ class Public::ContactsController < ApplicationController
     params.require(:contact).permit(:email, :name, :phone_number, :subject, :message)
   end
 end
-
-
