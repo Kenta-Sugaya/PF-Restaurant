@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     resources :contacts
     post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
     post 'contacts/back', to: 'contacts#back', as: 'back'
-    get 'done', to: 'contacts#done', as: 'done'
+    post 'done', to: 'contacts#done', as: 'done'
   end
 
   devise_for :users, :controllers => {

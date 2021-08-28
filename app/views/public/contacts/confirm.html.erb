@@ -1,6 +1,6 @@
-<div class="container">
-<div class="row col-md-8">
-<table>
+<div class="container justify-content-center">
+<h2>お問い合わせ確認画面</h2>
+<table class="contact-table">
   <tbody>
     <tr>
       <td class="text-center" style="width: 30%;">お名前</td>
@@ -16,21 +16,21 @@
     </tr>
   </tbody>
 </table>
-</div>
-<%= form_with model: @contact , url: public_confirm_path, local: true do |f| %>
+
+<%= form_with model: @contact , url: public_done_path, local: true do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :phone_number %>
   <%= f.hidden_field :subject %>
   <%= f.hidden_field :message %>
-  <div><%= f.submit '送信' %></div>
+  <div><%= f.submit '送信' ,class: "btn btn-primary save col-xs-6"%></div>
 <% end %>
-<%= form_with model: @contact, url: public_back_path do |f| %>
+<%= form_with model: @contact, url: public_back_path, local: true do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :phone_number %>
   <%= f.hidden_field :subject %>
   <%= f.hidden_field :message %>
-  <div><%= f.submit '入力画面に戻る' %></div>
+  <div><%= f.submit '入力画面に戻る' ,class: "btn btn-primary save col-xs-6" %></div>
 <% end %>
 </div>
