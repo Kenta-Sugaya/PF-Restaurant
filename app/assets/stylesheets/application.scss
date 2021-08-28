@@ -132,6 +132,11 @@ li {
  
 }
 .card-img {
+ background-image: image-url('chef5.jpg');
+ background-image: image-url('chef4.jpg');
+ background-image: image-url('chef3.jpg');
+ background-image: image-url('chef2.jpg');
+ background-image: image-url('chef1.jpg');
  width: 100%;
  height: 500px;
  object-fit: cover;
@@ -143,6 +148,7 @@ li {
  position: relative; 
 }
 .intro-img {
+ background-image: image-url('table3.jpg');
  width: 30%;
  height: 20%;
  object-fit: cover;
@@ -160,6 +166,7 @@ li {
 }
 
 .intro-img2 {
+ background-image: image-url('chef4.jpg');
  width: 30%;
  height: 20%;
  object-fit: cover;
@@ -176,6 +183,7 @@ li {
  transition: all .3s ease;
 }
 .intro-img3 {
+ background-image: image-url('howto2.jpg');
  width: 100%;
  height: 30%;
  object-fit: cover;
