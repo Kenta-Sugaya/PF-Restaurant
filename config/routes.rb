@@ -8,9 +8,7 @@ Rails.application.routes.draw do
       resources :products, except: [:index]
     end
     resources :products, only: [:index]
-    resources :users, only: [:index, :show, :edit, :update]
-    get '/users' => 'users#index'
-    get '/edit' => 'users#edit'
+    resources :users
     resources :orders
   end
   namespace :public do

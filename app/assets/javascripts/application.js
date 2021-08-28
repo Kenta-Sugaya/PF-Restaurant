@@ -19,8 +19,10 @@
 //= require_tree .
 $(function() {
     $('.slider').slick({
-        dots: true,
         autoplay: true,
         autoplaySpeed: 1500,
     });
+    $('.slick-dots li').on('mouseover', function() {
+    $('.a').slick('goTo', $(this).index());
+  });
 });

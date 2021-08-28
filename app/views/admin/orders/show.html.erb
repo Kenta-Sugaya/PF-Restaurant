@@ -50,7 +50,7 @@
               <td><%= (order.product.price*1.10).floor.to_s(:delimited) %></td>
               <td><%= order.amount %></td>
               <td><%= ((order.product.price*1.10).floor*order.amount).to_s(:delimited) %></td>
-              <%= form_with model: order, url: admin_order_product_path(order), method: :PATCH, local: true do |f| %>
+              <%= form_with model: @order, url: admin_order_path(order), method: :PATCH, local: true do |f| %>
                 <td><%= order.making_status %>
                 <!--%= f.hidden_field :order_id, :value => order.id %></td>-->
                 <td><%= f.select :making_status, OrderProduct.making_statuses.map { |k, v| [t("orderes.order_status.#{k}"), v] }, :selected=> order.making_status_before_type_cast %></td>

@@ -13,7 +13,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update!(user_params)
+    if @user.update(user_params)
       flash[:success] = "登録情報を変更しました"
       redirect_to admin_user_path
     else
