@@ -21,6 +21,9 @@ $(function() {
     $('.slider').slick({
         autoplay: true,
         autoplaySpeed: 1500,
+        loop: true,
+        sliderPerView: 2,
+        centeredSlides: true,
     });
     $('.slick-dots li').on('mouseover', function() {
     $('.a').slick('goTo', $(this).index());
